@@ -1,6 +1,6 @@
 # `git-puller`
 
-This is just a quick and slightly sketchy docker container I threw together to keep my Airflow DAGs synced with my personal Git repo. I tried using [kubernetes/git-sync](https://github.com/kubernetes/git-sync), but with the way Airflow's Docker Compose configuration expects directories to be laid out and the fact that Docker does not update file mounts (even if they're links to directories), that didn't work out, so I hacked this together. You should probably also try `git-sync` first before resorting to this, because if it does work for you it's better in a lot of ways.
+As one might expect, `git-puller` is a docker container that keeps a cloned git repo in sync with its origin by pulling on an interval. It can handle both public repositories and private ones that require a username and password. I threw it together to keep my Airflow DAGs synced with my personal Git repo. I had tried using [kubernetes/git-sync](https://github.com/kubernetes/git-sync), but with the way Airflow's Docker Compose configuration expects directories to be laid out and the fact that Docker does not update file mounts (even if they're links to directories), that didn't work out, so I hacked this together. You should probably also try `git-sync` first before resorting to this, because if it does work for you it's better in a lot of ways.
 
 ## Usage
 
