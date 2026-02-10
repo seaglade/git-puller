@@ -8,4 +8,4 @@ COPY --chmod=775 cred_helper.sh /cred_helper.sh
 COPY --chmod=775 entrypoint.sh /entrypoint.sh
 RUN git config --system credential.helper "/cred_helper.sh"
 WORKDIR /tmp/repo
-ENTRYPOINT /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
